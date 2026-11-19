@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="Create, manage, and track your short links with Swyft.">
+  <title>Links — Swyft</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="Swyft home">
+        <span class="brand-mark"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13.3 2 5.7 13h5.1L10 22l8.3-12h-5.2L13.3 2Z" fill="currentColor"/></svg></span>
+        <span class="brand-name">swyft</span>
+      </a> <br>
+     
+      <div class="nav-label">Workspace</div>
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#overview"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>Overview</a>
+        <a class="nav-link" href="#links"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 13.5a4.5 4.5 0 0 0 6.36 0l3-3A4.5 4.5 0 0 0 13 4.14l-1.72 1.72" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14 10.5a4.5 4.5 0 0 0-6.36 0l-3 3A4.5 4.5 0 0 0 11 19.86l1.72-1.72" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Links</a>
+        <a class="nav-link" href="#analytics"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5m0 14h17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="m7 15 4-4 3 2 6-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Analytics</a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="plan-card">
+        <div class="plan-heading">Free plan <span class="plan-pill">ACTIVE</span></div>
+        <p class="plan-copy"><strong id="plan-count">0</strong> of 100 links created. Your links stay yours.</p>
+        <div class="plan-track"><span id="plan-progress"></span></div>
+      </div>
+   
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div class="breadcrumbs">Workspace <span>/</span> <strong>Overview</strong></div>
+        <div class="topbar-right"><span class="status"><span class="status-dot"></span>All systems operational</span><span class="top-avatar">SA</span></div>
+      </header>
+      <div class="content" id="overview">
+        <div class="page-heading">
+          <div><div class="eyebrow">Link management</div><h1>Your links, in one place.</h1><p class="page-subtitle">Create, share, and keep track of every link you shorten.</p></div>
+          <div class="date-label" id="today-label"></div>
+        </div>
+
+        <section class="stats" aria-label="Link statistics">
+          <article class="stat-card">
+            <div class="stat-top"><span>Total links</span><span class="stat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 13.5a4.5 4.5 0 0 0 6.36 0l3-3A4.5 4.5 0 0 0 13 4.14l-1.72 1.72M14 10.5a4.5 4.5 0 0 0-6.36 0l-3 3A4.5 4.5 0 0 0 11 19.86l1.72-1.72" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span></div>
+            <div class="stat-value" id="total-links">0</div><div class="stat-note">Links in your workspace</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span>Total clicks</span><span class="stat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5m0 14h17M7 15l4-4 3 2 6-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            <div class="stat-value" id="total-clicks">0</div><div class="stat-note">Across all your short links</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span>Getting clicks</span><span class="stat-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 12 2.3 2.3 4.8-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            <div class="stat-value" id="clicked-links">0</div><div class="stat-note">Links with at least one click</div>
+          </article>
+        </section>
+
+        <section class="section-card create-card" aria-labelledby="create-heading">
+          <h2 class="section-heading" id="create-heading"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Create a short link</h2>
+          <p class="section-description">Paste a long URL and make it ready to share.</p>
+          <form id="create-form">
+            <div class="form-row">
+              <div class="field">
+                <label for="url-input">Destination URL</label>
+                <div class="input-wrap"><span class="input-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 13.5a4.5 4.5 0 0 0 6.36 0l3-3A4.5 4.5 0 0 0 13 4.14l-1.72 1.72M14 10.5a4.5 4.5 0 0 0-6.36 0l-3 3A4.5 4.5 0 0 0 11 19.86l1.72-1.72" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><input id="url-input" name="url" type="url" placeholder="https://example.com/your-very-long-link" required maxlength="2048"></div>
+              </div>
+              <div class="field alias-field">
+                <label for="alias-input">Custom ending <span style="color:#a7afa9;font-weight:450">(optional)</span></label>
+                <div class="input-wrap"><span class="input-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5h8M8 12h8M8 19h8M5 5h.01M5 12h.01M5 19h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><input id="alias-input" name="alias" type="text" placeholder="e.g. summer-sale" minlength="3" maxlength="24" pattern="[A-Za-z0-9_-]{3,24}" title="3–24 letters, numbers, hyphens, or underscores"></div>
+              </div>
+              <button class="shorten-button" id="submit-button" type="submit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13.3 2 5.7 13h5.1L10 22l8.3-12h-5.2L13.3 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Shorten link</button>
+            </div>
+            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="section-card links-card" id="links" aria-labelledby="links-heading">
+          <div class="links-header"><div class="links-title" id="links-heading">Your links <span class="count-badge" id="link-count">0</span></div><div class="search-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3" stroke="currentColor" stroke-width="1.6"/><path d="m15.5 15.5 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input class="search-input" id="search-input" type="search" placeholder="Search links..." aria-label="Search links"></div></div>
+          <div class="table-scroll" id="table-container"></div>
+        </section>
+
+        <section class="section-card analytics-card" id="analytics" aria-labelledby="analytics-heading">
+          <div class="analytics-heading"><div class="analytics-title" id="analytics-heading">Top performing links</div><div class="analytics-caption">Ranked by total clicks</div></div>
+          <div class="top-links" id="top-links"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+
+<script src="script.js"></script>
+</html>
